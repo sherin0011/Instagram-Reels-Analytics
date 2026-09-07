@@ -36,7 +36,7 @@ Total Records: **3,263 Reels**
 ## Database Structure
 
 ### Tables Used
-
+ 
 ### users
 Stores user information.
 
