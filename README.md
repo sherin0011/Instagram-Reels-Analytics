@@ -4,7 +4,7 @@
 
 This project analyzes Instagram Reels data using SQL, MySQL, and Power BI.
 
-The goal of this project is to identify popular reel topics, analyze hashtag usage, and create an interactive dashboard for content insights.
+The goal of this project is to identify popular reel topics, analyze hashtag usage patterns, and create an interactive dashboard for data-driven content insights.
 
 ---
 
@@ -20,23 +20,30 @@ The goal of this project is to identify popular reel topics, analyze hashtag usa
 
 ## Dataset
 
-The dataset contains Instagram Reels information including:
+The dataset used in this project contains Instagram Reels information including hashtags, topics, encoded topics, and hashtag counts.
 
-- Reel ID
-- Hashtags
-- Lemmatized Tags
-- Number of Tags
-- Topic
-- Encoded Topic
+**Dataset Name:** Instagram Reels Dataset - Cleaned
 
-Total Records: **3,263 Reels**
+**Dataset Source:**
+https://www.kaggle.com/datasets/lokeshbhaskar/instagram-reels-dataset-cleaned
+
+**Total Records Analyzed:** 3,263 Reels
+
+### Features Used
+
+- reel_id
+- hashtags
+- lemmatized_tags
+- number_of_tags
+- topic
+- encoded_topic
+
+**Note:** The dataset was imported into MySQL for analysis and visualized using Power BI.
 
 ---
 
 ## Database Structure
 
-### Tables Used
- 
 ### users
 Stores user information.
 
@@ -44,13 +51,13 @@ Stores user information.
 Stores content categories.
 
 ### content
-Stores saved content details.
+Stores saved content information.
 
 ### content_categories
 Maps content to categories with confidence scores.
 
 ### reels
-Stores Instagram reels dataset.
+Stores Instagram Reels dataset records.
 
 ---
 
@@ -80,7 +87,7 @@ GROUP BY topic
 ORDER BY total_reels DESC;
 ```
 
-### 2. Which topics use the most hashtags on average?
+### 2. Which topics use the highest average number of hashtags?
 
 ```sql
 SELECT topic,
@@ -111,7 +118,7 @@ GROUP BY topic
 HAVING COUNT(*) < 100;
 ```
 
-### 5. Find reels related to Fitness
+### 5. Find reels related to fitness
 
 ```sql
 SELECT *
@@ -134,16 +141,16 @@ GROUP BY topic;
 
 ---
 
-## Power BI Dashboard Features
+## Power BI Dashboard
 
-The dashboard includes:
+The dashboard provides:
 
-- Reels by Topic (Bar Chart)
+- Reels by Topic
 - Average Hashtags KPI
 - Total Reels KPI
-- Topic Distribution (Pie Chart)
+- Topic Distribution Analysis
 - Average Hashtags by Topic
-- Topic Filter (Slicer)
+- Interactive Topic Filter (Slicer)
 
 ---
 
@@ -158,21 +165,21 @@ The dashboard includes:
 - Fitness and Education are among the most common reel topics.
 - Average hashtags used per reel is approximately 7.54.
 - Total reels analyzed: 3,263.
-- Different topics show varying hashtag usage patterns.
+- Topic popularity varies significantly across categories.
+- Different topics show different hashtag usage patterns.
 
 ---
 
 ## Project Structure
 
-Instagram-Reels-Analytics/
-
+```text
+Instagram-Reels-Analytics
+│
 ├── README.md
-
 ├── smart_content_organizer.sql
-
 ├── Instagram_Reels_Analytics.pbix
-
-├── dashboard.jpg
+└── dashboard.jpg
+```
 
 ---
 
@@ -183,20 +190,22 @@ Through this project, I learned:
 - Database design using MySQL
 - SQL querying and data analysis
 - Data aggregation and reporting
-- Creating views
+- Creating SQL views
 - Building Power BI dashboards
+- Data visualization techniques
 - Publishing projects on GitHub
 
 ---
 
 ## Future Improvements
 
-- Add CTEs
+- Add CTEs (Common Table Expressions)
 - Add Window Functions
 - Add RANK() Functions
 - Add Stored Procedures
-- Create advanced Power BI KPIs
-- Add trend analysis dashboards
+- Create advanced KPIs in Power BI
+- Build trend analysis dashboards
+- Perform sentiment analysis on reel captions
 
 ---
 
